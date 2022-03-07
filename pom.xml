@@ -2,14 +2,14 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	
-	<groupId>com.DevopsTech</groupId>
-	<artifactId>Docker-Jenkins-Integration</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<groupId>com.mt</groupId>
+	<artifactId>maven-web-application</artifactId>
 	<packaging>war</packaging>
+	<version>0.0.1-SNAPSHOT</version>
 	
 	<name>maven-web-application</name>
 
-	<description>Maven Web Project for Java Programming Language</description>
+	<description>Maven Web Project for Java Project</description>
 
 	<organization>
 		<name>Mithun Technologies</name>
@@ -111,7 +111,7 @@
 	</distributionManagement>
 	
 	<build>
-		<finalName>Docker-Jenkins-Integration</finalName>
+		<finalName>maven-web-application</finalName>
 		
 		<plugins>
 			<plugin>
