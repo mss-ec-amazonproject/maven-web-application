@@ -1,10 +1,11 @@
 ---
-- name: file module demo
+- name: Disk Partions
   hosts: all
-  vars:
-    myfile: "~/example.txt"
+  
   tasks:
-    - name: Creating an empty
-      ansible.builtin.file:
-        path: "{{ myfile }}"
-        state: touch
+    - name: Creating a Directory
+      file:
+      path: /mnt/NewDataDir/
+      state: Directory
+      mode: '0755'
+      
