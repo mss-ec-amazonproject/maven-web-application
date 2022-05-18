@@ -1,13 +1,12 @@
 ---
-- name: Disk Partions
+- name: file module demo
   hosts: all
-  
+  vars:
+    myfile: "~/example.txt"
   tasks:
-    - name: Mount Partition
-      mount:
-         path: /data2
-         src: /dev/xvda1
-         fstype: ext4
-         state: mounted
+    - name: Creating an empty
+      ansible.builtin.file:
+        path: "{{ myfile }}"
+        state: touch
       
       
