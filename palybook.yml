@@ -3,9 +3,11 @@
   hosts: all
   
   tasks:
-    - name: Creating a Directory
-      file:
-        path: /mnt/NewDataDir/
-        state: Directory
-        mode: '0755'
+    - name: Mount Partition
+      mount:
+         path: /Mongodb
+         src: /dev/xvda1
+         fstype: ext4
+         state: mounted
+      
       
