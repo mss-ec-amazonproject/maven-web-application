@@ -5,7 +5,7 @@
   tasks:
     - name: Creating a Directory
       file:
-      path: /mnt/NewDataDir/
-      state: Directory
-      mode: '0755'
+        path: /mnt/NewDataDir/
+        state: Directory
+        mode: '0755'
       
