@@ -13,10 +13,10 @@
         path: "{{ myfile }}"
         state: touch
     - name: Creating an data1
-      shell: sudo su
-      ansible.builtin.file:
-        path: "{{ dir3 }}"
-        state: directory
+      shell: sudo mkdir /data5
+      args:
+        executable: /home/ec2-user
+      
         
         
       
