@@ -3,10 +3,16 @@
   hosts: all
   vars:
     myfile: "~/example.txt"
+    dir: "~/data1"
   tasks:
     - name: Creating an empty
       ansible.builtin.file:
         path: "{{ myfile }}"
         state: touch
+    - name: Creating an empty
+      ansible.builtin.file:
+        path: "{{ dir }}"
+        state: directory
+        mode: '0755'
       
       
