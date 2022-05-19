@@ -1,13 +1,9 @@
 ---
 - name: file module demo
   hosts: all
-  remote_user: root
-  become: true
   vars:
     myfile: "~/example.txt"
-    dir: "~/data1"
-    dir2: "/new/data2"
-    dir3: "/data3"
+    dir: "~/data2"
   tasks:
     - name: Creating an file
       ansible.builtin.file:
@@ -19,6 +15,10 @@
         state: directory
     - name: make create directory
       command: sudo mkdir /data3
+      become: true
+      become_user: root
+    - name: "change permissions on the directory"
+      command: sudo chmod -R 400 /home/ec2-user/data2
       become: true
       become_user: root
       
