@@ -4,6 +4,8 @@
   vars:
     myfile: "~/example.txt"
     dir: "~/data2"
+    mount_src: "/dev/xvda1"
+    mount_path: "/data4"
   tasks:
     - name: Creating an file
       ansible.builtin.file:
@@ -13,14 +15,14 @@
       ansible.builtin.file:
         path: "{{ dir }}"
         state: directory
-    - name: make create directory
-      command: sudo mkdir /data4
-      become: true
-      become_user: root
-    - name: mount partitions
-      mount: 
-        path: /data4
-        src: /dev/xvda1
+    - name: Create File System
+      filesystem:
+        fstype: ext4
+        dev: "{{ mount_src }}"
+    - name: Mount File System
+      mount:
+        path: "{{ mount_path }}"
+        src: "{{ mount_src }}"
         fstype: ext4
         state: mounted
         
