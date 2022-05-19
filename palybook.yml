@@ -14,8 +14,12 @@
         state: touch
     - name: Creating an data1
       ansible.builtin.file:
-        path: "{{ dir }}"
+        path: "{{ dir3 }}"
         state: directory
+    - name: ansible create directory example
+      ansible.builtin.file:
+      path: /tmp/devops_directory
+      state: directory
     - name: Creating an data2
       ansible.builtin.file:
         path: "{{ dir2 }}"
