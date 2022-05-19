@@ -6,7 +6,7 @@
     myfile: "~/example.txt"
     dir: "~/data1"
     dir2: "/new/data2"
-    dir3: "/tmp/data3"
+    dir3: "/data3"
   tasks:
     - name: Creating an data1
       ansible.builtin.file:
@@ -16,12 +16,15 @@
       ansible.builtin.file:
         path: "{{ dir }}"
         state: directory
-        mode: '0755'
+     - name: Creating an data2
+      ansible.builtin.file:
+        path: "{{ dir2 }}"
+        state: directory
     - name: Creating an data3
       ansible.builtin.file:
-        path: "{{ dir }}"
+        path: "{{ dir3 }}"
         state: directory
-        mode: '0755'
+        
         
       
       
