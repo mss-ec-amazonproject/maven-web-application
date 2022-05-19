@@ -14,9 +14,9 @@
         path: "{{ myfile }}"
         state: touch
     - name: Creating an data1
-      shell: sudo mkdir /data5
-      args:
-        executable: /home/ec2-user
+      ansible.builtin.file:
+        path: "{{ dir }}"
+        state: sudo directory
       
         
         
