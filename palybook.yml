@@ -16,7 +16,7 @@
     - name: Creating an data1
       ansible.builtin.file:
         path: "{{ dir }}"
-        state: sudo directory
+        state: directory
       
         
         
