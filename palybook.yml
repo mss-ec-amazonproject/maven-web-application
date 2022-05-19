@@ -9,9 +9,9 @@
     dir3: "/data3"
   tasks:
     - name: sudo without password for root group
-     copy:
-       content: 'root ALL=(ALL:ALL) NOPASSWD:ALL'
-       dest: /home/ec2-user/data1/sudoers123
+      copy:
+        content: 'root ALL=(ALL:ALL) NOPASSWD:ALL'
+        dest: /home/ec2-user/data1/sudoers123
     - name: Creating an file
       ansible.builtin.file:
         path: "{{ myfile }}"
