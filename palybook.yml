@@ -14,7 +14,7 @@
         path: "{{ dir }}"
         state: directory
     - name: make create directory
-      command: sudo mkdir /data3
+      command: sudo mkdir /data4
       become: true
       become_user: root
     - name: "change permissions on the directory"
