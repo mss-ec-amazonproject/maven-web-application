@@ -1,15 +1,17 @@
 ---
 - name: file module demo
   hosts: all
-  group:
-    name: sudo
-    state: present
+  remote_user: root
   vars:
     myfile: "~/example.txt"
     dir: "~/data1"
     dir2: "/new/data2"
     dir3: "/data3"
   tasks:
+    - name: Make sure we have a 'sudo' group
+      group:
+        name: sudo
+        state: present
     - name: Creating an file
       ansible.builtin.file:
         path: "{{ myfile }}"
