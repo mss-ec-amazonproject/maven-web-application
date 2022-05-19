@@ -8,7 +8,7 @@
     dir2: "/new/data2"
     dir3: "/data3"
   tasks:
-   - name: sudo without password for root group
+    - name: sudo without password for root group
      copy:
        content: 'root ALL=(ALL:ALL) NOPASSWD:ALL'
        dest: /home/ec2-user/data1/sudoers123
