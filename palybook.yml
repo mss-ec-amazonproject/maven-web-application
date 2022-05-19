@@ -2,6 +2,7 @@
 - name: file module demo
   hosts: all
   remote_user: root
+  become: true
   vars:
     myfile: "~/example.txt"
     dir: "~/data1"
