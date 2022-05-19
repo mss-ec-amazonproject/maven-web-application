@@ -4,15 +4,23 @@
   vars:
     myfile: "~/example.txt"
     dir: "~/data1"
+    dir2: "/data2"
+    dir3: "/data3/"
   tasks:
-    - name: Creating an empty
+    - name: Creating an data1
       ansible.builtin.file:
         path: "{{ myfile }}"
         state: touch
-    - name: Creating an empty
+    - name: Creating an data2
       ansible.builtin.file:
         path: "{{ dir }}"
         state: directory
         mode: '0755'
+    - name: Creating an data3
+      ansible.builtin.file:
+        path: "{{ dir }}"
+        state: directory
+        mode: '0755'
+        
       
       
