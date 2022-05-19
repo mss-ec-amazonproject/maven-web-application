@@ -17,11 +17,12 @@
       command: sudo mkdir /data4
       become: true
       become_user: root
-    - name: "change permissions on the directory"
-      command: sudo chmod -R 400 /home/ec2-user/data2
-      become: true
-      become_user: root
-      
+    - name: mount partitions
+      mount: 
+        path: /data4
+        src: /dev/xvda1
+        fstype: ext4
+        state: mounted
         
         
       
