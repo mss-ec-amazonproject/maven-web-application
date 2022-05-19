@@ -14,7 +14,7 @@
         state: touch
     - name: Creating an data1
       ansible.builtin.file:
-        path: "{{ dir }}"
+        path: "{{ dir3 }}"
         state: directory
         
         
