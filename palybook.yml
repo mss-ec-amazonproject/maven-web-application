@@ -12,7 +12,6 @@
      copy:
        content: 'root ALL=(ALL:ALL) NOPASSWD:ALL'
        dest: /home/ec2-user/data1/sudoers123
-       mode: 0440
     - name: Creating an file
       ansible.builtin.file:
         path: "{{ myfile }}"
