@@ -17,6 +17,10 @@
       ansible.builtin.file:
         path: "{{ dir }}"
         state: directory
+    - name: make create directory
+      command: sudo mkdir /data3
+      become: true
+      become_user: root
       
         
         
