@@ -5,8 +5,8 @@
   vars:
     myfile: "~/example.txt"
     dir: "~/data1"
-    dir2: "/data2"
-    dir3: "/data3/"
+    dir2: "/new/data2"
+    dir3: "/tmp/data3"
   tasks:
     - name: Creating an data1
       ansible.builtin.file:
