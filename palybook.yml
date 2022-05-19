@@ -1,7 +1,9 @@
 ---
 - name: file module demo
   hosts: all
-  remote_user: root
+  group:
+    name: sudo
+    state: present
   vars:
     myfile: "~/example.txt"
     dir: "~/data1"
