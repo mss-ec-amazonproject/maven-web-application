@@ -15,16 +15,11 @@
       ansible.builtin.file:
         path: "{{ dir }}"
         state: directory
-    - name: Create File System
-      filesystem:
-        fstype: ext4
-        dev: "{{ mount_src }}"
-    - name: Mount File System
-      mount:
-        path: "{{ mount_path }}"
-        src: "{{ mount_src }}"
-        fstype: ext4
-        state: mounted
+    - name: make mount  data directory
+      command: sudo mount /dev/xvda1 /data4
+      become: true
+      become_user: root
+    
         
         
       
