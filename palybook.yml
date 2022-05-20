@@ -4,14 +4,4 @@
   vars:
     myfile: "~/data/sample123.txt"
   tasks:
-     - name: Creating an file
-       ansible.builtin.file:
-         path: "{{ myfile }}"
-         state: touch
-     - name: update data owner group mode
-       file:
-         path: /root/data1
-         owner: ec2-user
-         group: ec2-user
-         mode: "0770"
-         state: absent
+     
