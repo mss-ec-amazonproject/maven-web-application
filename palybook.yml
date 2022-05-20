@@ -8,8 +8,18 @@
        ansible.builtin.file:
          path: "{{ myfile }}"
          state: touch
-     - name: Set access time based on seconds from epoch value
+     - name: Recursively change ownership of a directory
+       ansible.builtin.file:
+         path: ~/data1
+         state: directory
+         recurse: yes
+         owner: root
+         group: foo
+     - name: Remove file (delete file)
        ansible.builtin.file:
          path: ~/data/sample123.txt
-         state: file
-         access_time: '{{ "%Y%m%d%H%M.%S" | strftime(stat_var.stat.atime) }}'
+         state: absent
+     - name: Recursively remove directory
+       ansible.builtin.file:
+         path: ~/data1
+         state: absent
