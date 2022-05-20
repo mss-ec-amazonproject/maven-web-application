@@ -2,7 +2,7 @@
 - name: file module demo
   hosts: all
   vars:
-    myfile: "sample123.txt"
+    myfile: "~/data/sample123.txt"
   tasks:
      - name: Creating an file
        ansible.builtin.file:
@@ -10,7 +10,7 @@
          state: touch
      - name: Change file ownership, group and permissions
        ansible.builtin.file:
-         path: ~/sample123.txt
+         path: ~/data
          owner: root
          group: root
          mode: '0644'
