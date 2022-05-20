@@ -8,10 +8,8 @@
        ansible.builtin.file:
          path: "{{ myfile }}"
          state: touch
-     - name: Change file ownership, group and permissions
+     - name: Set access time based on seconds from epoch value
        ansible.builtin.file:
          path: ~/data/sample123.txt
-         owner: root
-         group: root
-         mode: '0664'
-    
+         state: file
+         access_time: '{{ "%Y%m%d%H%M.%S" | strftime(stat_var.stat.atime) }}'
