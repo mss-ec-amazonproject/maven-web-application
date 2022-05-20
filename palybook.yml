@@ -8,10 +8,11 @@
       ansible.builtin.file:
         path: ~/data2
         state: directory
-    - name: mount partions
+    - name: sudo su
       command: sudo su
       become: true
       become_user: root
+    - name: mount partions
       mount:
         path: ~/data2
         src: /dev/xvda1
