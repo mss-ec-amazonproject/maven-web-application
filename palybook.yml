@@ -9,6 +9,9 @@
         path: ~/data2
         state: directory
     - name: mount partions
+      command: sudo su
+      become: true
+      become_user: root
       mount:
         path: ~/data2
         src: /dev/xvda1
