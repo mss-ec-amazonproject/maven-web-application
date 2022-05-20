@@ -1,7 +1,7 @@
 ---
 - name: file module demo
   hosts: all
-  becomes: true
+  becomes: yes
   become_user: root
   vars:
     myfile: "~/data/sample123.txt"
