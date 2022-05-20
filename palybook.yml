@@ -9,7 +9,7 @@
        ansible.builtin.file:
          path: "{{ myfile }}"
          state: touch
-         mode: 700
+         mode: 0774
      - name: Creating a file with content
        copy:
          dest: "~/sample.txt"
