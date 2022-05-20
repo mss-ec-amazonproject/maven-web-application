@@ -9,10 +9,11 @@
        ansible.builtin.file:
          path: "{{ myfile }}"
          state: touch
-     - name: Creating a file with content
-       command: sudo chown root:root sample.txt
+     - name: change owenr permissions on the file
+       command: sudo chmod -R 400 /home/ec2-user/data2
        become: true
        become_user: root
+     - name: Creating a file with content
        copy:
          dest: "~/sample.txt"
          content: |
