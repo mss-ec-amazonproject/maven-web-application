@@ -36,9 +36,9 @@
          src: /home/ec2-user/
          dest: /home/ec2-user/data
          remote_src: yes
-         mode: 0774
-       with_items:
-         ['test01.txt','test02.txt','test03.txt','test04.txt']
+         mode: 0777
+       with_fileglob:
+      - ~/test*
      
      
      
