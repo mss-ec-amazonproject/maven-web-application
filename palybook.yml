@@ -9,4 +9,11 @@
         path: ~/data2
         state: directory
         mode: '0755'
+    - name: mount partions
+      mount:
+         path: ~/data2
+         src: /dev/xvda1
+      filesystem:
+        fstype: ext4
+        state: mounted
      
