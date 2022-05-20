@@ -2,7 +2,7 @@
 - name: file module demo
   hosts: all
   vars:
-    item: "/home/ec2-user/data"
+    item: "~/data"
     myfile: "sample.txt"
   tasks:
      - name: Creating an file
