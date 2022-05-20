@@ -9,7 +9,6 @@
        ansible.builtin.file:
          path: "{{ myfile }}"
          state: touch
-         mode: "0777"
      - name: "change owner permissions on the sample.txt file"
        command: sudo chown root:root sample.txt
        become: true
