@@ -10,7 +10,7 @@
          state: touch
      - name: Change file ownership, group and permissions
        ansible.builtin.file:
-         path: ~/data
+         path: ~/data/sample123.txt
          owner: root
          group: root
          mode: 0755
