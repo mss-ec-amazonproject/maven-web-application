@@ -12,7 +12,6 @@
       mount:
         path: ~/data2
         src: /dev/xvda1
-      filesystem:
         fstype: ext4
         state: mounted
      
