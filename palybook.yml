@@ -38,7 +38,7 @@
          remote_src: yes
          mode: 0777
        with_fileglob:
-      - ~/test*
+       - ~/test*
      
      
      
