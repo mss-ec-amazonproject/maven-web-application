@@ -1,6 +1,8 @@
 ---
 - name: file module demo
   hosts: all
+  becomes: true
+  become_user: root
   vars:
     myfile: "~/data/sample123.txt"
   tasks:
@@ -8,10 +10,6 @@
       ansible.builtin.file:
         path: ~/data2
         state: directory
-    - name: sudo su
-      command: sudo su
-      become: true
-      become_user: root
     - name: mount partions
       mount:
         path: ~/data2
