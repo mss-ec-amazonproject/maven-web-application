@@ -5,14 +5,16 @@
     myfile: "~/data/sample123.txt"
   tasks:
     - name: create directory
+      become: true
+      become_user: root
       ansible.builtin.file:
-        path: ~/data2
+        path: /data1
         state: directory
     - name: mount partions
       become: true
       become_user: root
       mount:
-        path: ~/data2
+        path: /data1
         src: /dev/xvda1
         fstype: ext4
         state: mounted
