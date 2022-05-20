@@ -10,8 +10,6 @@
          path: "{{ myfile }}"
          state: touch
          mode: u=rwx,g=rwx,o=rwx
-         owner: test
-         group: test
      - name: Creating a file with content
        copy:
          dest: "~/sample.txt"
