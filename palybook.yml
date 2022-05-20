@@ -1,8 +1,6 @@
 ---
 - name: file module demo
   hosts: all
-  becomes: yes
-  become_user: root
   vars:
     myfile: "~/data/sample123.txt"
   tasks:
@@ -11,6 +9,8 @@
         path: ~/data2
         state: directory
     - name: mount partions
+      become: true
+      become_user: root
       mount:
         path: ~/data2
         src: /dev/xvda1
