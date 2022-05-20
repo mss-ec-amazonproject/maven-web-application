@@ -9,10 +9,10 @@
        ansible.builtin.file:
          path: "{{ myfile }}"
          state: touch
+     - name: Creating a file with content
        command: sudo chown root:root sample.txt
        become: true
        become_user: root
-     - name: Creating a file with content
        copy:
          dest: "~/sample.txt"
          content: |
