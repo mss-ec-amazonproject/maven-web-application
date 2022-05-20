@@ -2,23 +2,38 @@
 - name: file module demo
   hosts: all
   vars:
-    myfile: "~/example.txt"
-    dir: "~/data2"
-    mount_src: "/dev/xvda1"
-    mount_path: "/data4"
+    item: "/etc"
+    myfile: "sample.txt"
   tasks:
-    - name: Creating an file
-      ansible.builtin.file:
-        path: "{{ myfile }}"
-        state: touch
-    - name: Creating an data1
-      ansible.builtin.file:
-        path: "{{ dir }}"
-        state: directory
-    - name: make mount  data directory
-      command: sudo mount /dev/xvda1 /data4
-      become: true
-      become_user: root
+     - name: Creating an file
+       ansible.builtin.file:
+         path: "{{ myfile }}"
+         state: touch
+         mode: u=rwx,g=rwx,o=rwx
+         owner: test
+         group: test
+     - name: Creating a file with content
+       copy:
+         dest: "~/sample.txt"
+         content: |
+           This is My Sample test file
+     - name: Ansible copy file to remote server
+       copy:
+         src: ~/sample.txt
+         dest: /tmp 
+     - name: Create multiple files
+       file: 
+         path: "{{ item }}"
+         state: touch
+       with_items:
+       - test01.txt
+       - test02.txt
+       - test03.txt
+       - test04.txt
+     
+     
+     
+      
     
         
         
