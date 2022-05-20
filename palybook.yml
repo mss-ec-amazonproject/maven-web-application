@@ -8,4 +8,10 @@
        ansible.builtin.file:
          path: "{{ myfile }}"
          state: touch
+     - name: Change file ownership, group and permissions
+       ansible.builtin.file:
+         path: ~/sample123.txt
+         owner: root
+         group: root
+         mode: '0644'
     
