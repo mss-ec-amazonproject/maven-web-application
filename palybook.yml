@@ -4,18 +4,10 @@
   vars:
     myfile: "~/example.txt"
   tasks:
-  - name: Creating a file with content
-    copy:
-      dest: "~/example.txt"
-      content: |
-        line 01
-        line 02
-        lone 01
-        lone 02
   - name: Ansible lineinfile insert after example
     lineinfile:
       dest: "~/example.txt"
-      line: 'inventory = /home/fedora/inventory.ini'
+      line: '/dev/sdc1   ext4     1     2'
       insertafter: '\[defaults\]'    
   - name: Removing a file
     file:
