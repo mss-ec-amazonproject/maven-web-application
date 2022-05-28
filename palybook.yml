@@ -9,9 +9,10 @@
       dest: "~/example.txt"
       line: '/dev/sdd1   ext4     1     2'
       insertbefore: '#librariy]'    
-  - name: Removing a file
-    file:
-      path: "/sample123.txt"
-      state: absent
+  - name: Ansible lineinfile insertbefore example
+    lineinfile:
+      dest: "~/example.txt"
+      line: 'inventory = /home/mdtutorials/inventory.ini'
+      insertbefore: '#library'
    
      
