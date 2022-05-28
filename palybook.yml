@@ -2,20 +2,17 @@
 - name: file module demo
   hosts: all
   vars:
-    myfile: "~/data/sample123.txt"
+    myfile: "~/example.txt"
   tasks:
-    - name: create directory
-      become: true
-      become_user: root
-      ansible.builtin.file:
-        path: /data1
-        state: directory
-    - name: mount partions
-      become: true
-      become_user: root
-      mount:
-        path: /data1
-        src: /dev/xvda1
-        fstype: ext4
-        state: mounted
+  - name: Creating an empty file
+    file:
+      path: "{{ myfile }}"
+      state: touch    
+  - name: Creating a file with content
+    copy:
+      dest: "~/example.txt"
+      content: |
+        line 01
+        line 02
+   
      
