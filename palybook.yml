@@ -8,7 +8,7 @@
     lineinfile:
       dest: "~/example.txt"
       line: '/dev/sdd1   ext4     1     2'
-      insertbefore: '\[defaults\]'    
+      insertbefore: '#librariy]'    
   - name: Removing a file
     file:
       path: "/sample123.txt"
