@@ -7,8 +7,8 @@
   - name: Ansible lineinfile insert after example
     lineinfile:
       dest: "~/example.txt"
-      line: '/dev/sdc1   ext4     1     2'
-      insertafter: '\[defaults\]'    
+      line: '/dev/sdd1   ext4     1     2'
+      insertbefore: '\[defaults\]'    
   - name: Removing a file
     file:
       path: "/sample123.txt"
